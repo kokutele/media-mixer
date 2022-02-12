@@ -74,11 +74,9 @@ class MediaMixer extends EventEmittter {
   _sinkAudio = null
 
   constructor( props ) {
-    super( props )
-
     this._type = props.type || 'test'
     this._rtmpUrl = props.rtmpUrl || 'rtmp://localhost/live/test'
-    this._showId = props.showId || true
+    this._showId = props.showId !== undefined ? props.showId : true
     this._rows = props.rows || 2
     this._cols = props.cols || 2
     this._width = props.width || 384
